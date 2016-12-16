@@ -10,7 +10,7 @@ RUN \
   mkdir -p /var/testlink/logs && \
   mkdir -p /var/testlink/upload_area
 
-ADD *.php /var/testlink/
+COPY *.php /var/testlink/
 
 ENTRYPOINT tail -f /dev/null
 

@@ -19,11 +19,14 @@ php:
     - db:db
 
 db:
-  image: postgres:latest
+  image: postgres:9.4
+  restart: always
   environment:
    - POSTGRES_DB=testlink
    - POSTGRES_PASSWORD=testlink
    - POSTGRES_USER=testlink
+  volumes:
+    - data:/var/lib/postgresql/data
 
 testlink:
   image: techknowlogick/testlink:latest
