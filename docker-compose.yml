@@ -5,7 +5,7 @@ web:
   links:
     - php:php
   ports:
-    - 80
+          - "80:80"
   environment:
     - DATABASE_HOST=db
     - DATABASE_PASS=testlink
@@ -19,10 +19,11 @@ php:
     - db:db
 
 db:
-  image: mariadb:10
+  image: postgres:latest
   environment:
-   - MYSQL_DATABASE=testlink
-   - MYSQL_ROOT_PASSWORD=testlink
+   - POSTGRES_DB=testlink
+   - POSTGRES_PASSWORD=testlink
+   - POSTGRES_USER=testlink
 
 testlink:
   image: techknowlogick/testlink:latest

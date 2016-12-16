@@ -1,8 +1,8 @@
 <?php
 
-$database_type = "mysql";
-$database_user = "root";
-$database_pass = "";
+$database_type = "postgres";
+$database_user = "testlink";
+$database_pass = "testlink";
 $database_host = "localhost";
 $database_name = "testlink";
 $database_prefix = "";
