@@ -6,7 +6,6 @@ volumes:
 services:
   web:
     build: ./web
-    image: techknowlogick/testlink:web
     volumes_from:
       - testlink
     links:
@@ -27,7 +26,7 @@ services:
       - db:db
 
   db:
-    image: postgres:9.4
+    build: ./db
     restart: always
     environment:
       - POSTGRES_DB=testlink
@@ -35,6 +34,8 @@ services:
       - POSTGRES_USER=testlink
     volumes:
       - data:/var/lib/postgresql/data
+    volumes_from:
+      - testlink
 
   testlink:
     build: .
