@@ -15,7 +15,6 @@ services:
     environment:
       - DATABASE_HOST=db
       - DATABASE_PASS=testlink
-    tty: true
 
   php:
     build: ./php
@@ -36,8 +35,6 @@ services:
       - data:/var/lib/postgresql/data
     volumes_from:
       - testlink
-    links:
-      - postgres:postgres
 
   testlink:
     build: .
