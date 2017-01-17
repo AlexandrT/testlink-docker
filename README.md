@@ -34,3 +34,5 @@ Container image that has the files for testlink which can be attached as a data 
 
 ## Demo
 This repository has a docker-compose.yml file that will spin up a sample environment for TestLink.
+
+This fork uses postgres as DB. To create schema you need to run: `docker exec <container_id> /tmp/init_db.sh`.
